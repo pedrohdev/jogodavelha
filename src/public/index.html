@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Jogo da velha 🕹️👵</title>
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+        <div id="app">
+            <Start v-if="!started" @start="start"></Start>
+            <Result v-else-if="result" @restart="restart" :message="result"></Result>
+            <Left @restart="restart" v-else-if="left"></Left>
+            <Game v-else-if="!waiting" :player="player" :adversary="adversary" :turn="turn" @select="select" :board="board"/></Game>
+            <Waiting v-else-if="waiting"></Waiting>
+        </div>
+        
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
+        <script src="https://cdn.socket.io/4.1.2/socket.io.js"></script>
+        <script src="js/app.js"></script>
+    </body>
+</html>

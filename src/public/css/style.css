@@ -1,0 +1,109 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    background-color: #0f0d14;
+}
+
+* {
+    color: #fff;
+    font-family: system-ui,-apple-system,BlinkMacSystemFont,Segoe UI, Helvetica Neue,Helvetica,Arial,sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
+
+div#app {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+div#game {
+    width: 90vw;
+    height: 90vw;
+    background-color: #1b1824;
+    display: grid;
+    grid-template: repeat(3, 1fr) / repeat(3, 1fr);
+    border: 4px solid #5139da;
+    border-radius: 5px;
+}
+
+div#game > div {
+    color: #5139da;
+    border: 4px solid #5139da;
+    font-family: Helvetica;
+    font-weight: bold;
+    font-size: 4em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+div#game[disabled] {
+  pointer-events: none;
+  opacity: 0.7;
+}
+
+div#game > div[disabled] {
+    pointer-events: none;
+}
+
+@media (min-width: 600px){
+    div#game {
+        width: 600px;
+        height: 600px;
+    }
+}
+
+div#app > div.start {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+div#app > div.start > h1{
+    margin-bottom: 50px;
+}
+
+input#name {
+    outline: none;
+    border: none;
+    background: #1b1b1b;
+    height: 50px;
+    width: 70%;
+    padding-left: 20px;
+    border-radius: 5px;
+    font-size: 15pt;
+    color: #ffffff;
+}
+
+button {
+    cursor: pointer;
+    margin-top: 20px;
+    border: none;
+    outline: none;
+    height: 50px;
+    width: calc(70% + 20px);
+    background:#5139da;
+    color: #fff;
+    border-radius: 5px;
+    font-size: 15pt;
+}
+
+canvas#confetti {
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+}
+
+div.back {
+    display: flex;
+    flex-direction: column;
+}
+
+button.back {
+    align-self: center;
+    background:#9a39da;
+    width: 250px;
+}
